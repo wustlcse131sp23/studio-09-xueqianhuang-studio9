@@ -22,14 +22,18 @@ public class UniversityDatabase {
 	public String lookupFullName(String accountName) {
 		// TODO: Complete according to studio instructions
 		Student temp = this.students.get(accountName);
-		return temp.getFullName();
+		if(temp != null)
+			return temp.getFullName();
+		else
+			return null;
 	}
 
 	public double getTotalBearBucks() {
 		// TODO
 		double total = 0.0;
-		this.students.
-
+		for(Student student : students.values()){
+			total += student.getBearBucksBalance();
+		}
 		return total;
 	}
 }
